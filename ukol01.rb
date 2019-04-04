@@ -1,8 +1,6 @@
-# -- --------------------- --
-# -- Michal Zykov          --
-# -- Railsworkshop 1.0     --
-# -- Homework #1           --
-# -- --------------------- --
+# Michal Zykov         
+# Railsworkshop 1.0   
+# Homework #1: Triangle       
 
 # Triangle: 3-sided polygon
 class Triangle
