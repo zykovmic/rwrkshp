@@ -1,5 +1,5 @@
 class Triangle
-  # triangle vertices
+
   attr_accessor :a, :b, :c
 
   def initialize( a, b, c )
@@ -8,20 +8,19 @@ class Triangle
     @c = c
   end
 
+  def self.create_triangle( a, b )
+    Triangle.new( a, b, Math.sqrt( a ** 2 + b ** 2 ) )
+  end
+
   def valid?()
-    if a + b > c ? true : false
+    a + b > c ? true : false
   end
 
   def circuit()
     a + b + c
   end
-
-  def self.create_rectangular( a, b )
-    Triangle.new( a, b, Math.sqrt( a ** 2 + b ** 2 )  )
-  end
-end
 end
 
-puts "Hello!"
-t = Triangle.create_rectangular( 2, 2 )
-t.class
+t = Triangle.create_triangle( 3, 2 )
+puts t.valid?()
+puts t.circuit().to_i
