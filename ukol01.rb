@@ -10,31 +10,33 @@ class Triangle
 
   # create an instance
   def initialize( a, b, c )
-    @a = a
-    @b = b
+    @a = a 
+    @b = b 
     @c = c
   end
 
   # class method, input: two sides
-  def self.create_triangle( a, b )
-    Triangle.new( a, b, Math.sqrt( a ** 2 + b ** 2 ).to_i )
+  def self.create_rectangular( a, b )
+    Triangle.new( a, b, Math.sqrt( a ** 2 + b ** 2 ) )
   end
 
   # instance method, return true if triangle is valid
-  def valid?()
-    a + b > c ? true : false
+  def valid?
+    a + b > c && b + c > a && c + a > b
   end
 
   # return triangle circuit
-  def circuit()
+  def circuit
     a + b + c
+  end
+
+  def print
+    puts "- triangle: a = #{@a}, b =  #{@b}, c =  #{@c}\n- is valid? #{self.valid?}\n- circuit: #{self.circuit}"
   end
 end
 
 # create triangle and print information
 # t = Triangle.new( 2, 2, 2 )
 # t = Triangle.new( 2, 2, 8 )
-t = Triangle.create_triangle( 3, 2 )
-puts "- triangle: a = #{t.a} b = #{t.b} c = #{t.c}"
-puts "- is it valid? #{t.valid?()}"
-puts "- circuit is: #{t.circuit()}"
+t = Triangle.create_rectangular( 3, 2 )
+t.print
