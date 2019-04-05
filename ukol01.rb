@@ -9,15 +9,13 @@ class Triangle
   attr_accessor :a, :b, :c
 
   # create an instance
-  def initialize( a, b, c )
-    @a = a 
-    @b = b 
-    @c = c
+  def initialize(a, b, c)
+    @a, @b, @c = a, b, c
   end
 
   # class method, input: two sides
-  def self.create_rectangular( a, b )
-    Triangle.new( a, b, Math.sqrt( a ** 2 + b ** 2 ) )
+  def self.create_rectangular(a, b)
+    Triangle.new(a, b, Math.sqrt(a ** 2 + b ** 2))
   end
 
   # instance method, return true if triangle is valid
@@ -36,7 +34,7 @@ class Triangle
 end
 
 # create triangle and print information
-# t = Triangle.new( 2, 2, 2 )
-# t = Triangle.new( 2, 2, 8 )
-t = Triangle.create_rectangular( 3, 2 )
+# t = Triangle.new(2, 2, 2)
+# t = Triangle.new(2, 2, 8)
+t = Triangle.create_rectangular(3, 2)
 t.print
